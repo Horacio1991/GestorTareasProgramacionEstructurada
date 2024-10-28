@@ -7,10 +7,17 @@
 """
 
 import os
+import time
 from datetime import datetime
 
 # Archivo donde se van a guardar las tareas
 ARCHIVO_TAREAS = "tareas.txt"
+
+# Limpiar la consola para una mejor usabilidad
+
+
+def limpiar_consola():
+    os.system("cls" if os.name == "nt" else "clear")
 
 # Agregar Tarea y crear archivo si no existe
 
@@ -135,13 +142,23 @@ def menu():
         opcion = input("Seleccione una opción: ").strip()
 
         if opcion == "1":
+            limpiar_consola()
             agregar_tarea()
+            time.sleep(2)
+            limpiar_consola()
         elif opcion == "2":
+            limpiar_consola()
             listar_tareas()
         elif opcion == "3":
+            limpiar_consola()
             eliminar_tarea()
+            time.sleep(2)
+            limpiar_consola()
         elif opcion == "4":
+            limpiar_consola()
             marcar_completada()
+            time.sleep(2)
+            limpiar_consola()
         elif opcion == "5":
             print("Saliendo del gestor de tareas.")
             ejecutando = False  # Actualizamos la variable para salir del bucle
